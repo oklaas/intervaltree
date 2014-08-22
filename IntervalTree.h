@@ -122,9 +122,9 @@ public:
                 sort(ivals.begin(), ivals.end(), intervalStartSorter);
             }
 
-            int leftp = 0;
-            int rightp = 0;
-            int centerp = 0;
+            K leftp = 0;
+            K rightp = 0;
+            K centerp = 0;
             
             if (leftextent || rightextent) {
                 leftp = leftextent;
