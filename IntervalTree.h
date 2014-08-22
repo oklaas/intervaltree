@@ -103,8 +103,8 @@ public:
             intervalVector& ivals,
             unsigned int depth = 16,
             unsigned int minbucket = 64,
-            int leftextent = 0,
-            int rightextent = 0,
+            K leftextent = 0,
+            K rightextent = 0,
             unsigned int maxbucket = 512
             )
         : left(NULL)
@@ -117,7 +117,7 @@ public:
             sort(ivals.begin(), ivals.end(), intervalStartSorter);
             intervals = ivals;
         } else {
-            if (leftextent == 0 && rightextent == 0) {
+            if (fabs(static_cast<double>(leftextent)) <1.e-12 && fabs(static_cast<double>(rightextent)) < 1.e-12) {
                 // sort intervals by start
                 sort(ivals.begin(), ivals.end(), intervalStartSorter);
             }
